@@ -12,16 +12,16 @@
     }
 
     .mainGrid {
-        @apply grid gap-5 sm:grid-cols-4 grid-cols-1 justify-items-stretch m-10
+        @apply grid gap-5 sm:grid-cols-4 grid-cols-1 justify-items-stretch m-10;
     }
 
     .gridItem {
         @apply grid grid-rows-1 justify-center content-center
-        bg-gradient-to-br from-indigo-500 rounded-lg cursor-pointer;
+        bg-gradient-to-br from-indigo-500 to-teal-600 rounded-lg cursor-pointer border-2;
     }
 
     .paginationButtons {
-        @apply flex-1 border-2 border-white cursor-pointer hover:bg-gradient-to-br from-indigo-500;
+        @apply flex-1 border-2 border-white cursor-pointer hover:bg-gradient-to-br from-indigo-500 to-teal-600;
     }
 
     .paginationButtonsDisabled {
@@ -29,43 +29,43 @@
     }
 
     .modalBackdrop {
-        @apply fixed top-0 bottom-0 left-0 right-0 backdrop-blur-sm flex justify-center items-center
+        @apply fixed top-0 bottom-0 left-0 right-0 backdrop-blur-sm flex justify-center items-center;
     }
 
     .modal {
-        @apply bg-gradient-to-r from-indigo-500 to-teal-600 shadow-md flex flex-col w-2/3 max-w-2xl rounded-3xl
+        @apply bg-gradient-to-r from-indigo-500 to-teal-600 shadow-md flex flex-col w-2/3 max-w-2xl rounded-3xl border-2;
     }
 
     .modalHeader,
     .modalFooter {
-        @apply p-3 flex
+        @apply p-3 flex;
     }
 
     .modalHeader {
-        @apply relative justify-center text-white text-2xl
+        @apply relative justify-center text-white text-2xl;
     }
 
     .modalFooter {
-        @apply grid grid-cols-5 p-0 justify-items-stretch justify-center bg-black
+        @apply grid grid-cols-5 p-0 justify-items-stretch justify-center bg-black rounded-b-3xl;
     }
 
     .modalTabs {
-        @apply h-full w-full
+        @apply h-full w-full;
     }
 
     .modalTabActive {
-        @apply h-full w-full bg-gradient-to-r from-indigo-500 to-teal-600
+        @apply h-full w-full bg-gradient-to-r from-indigo-500 to-teal-600 rounded-b-3xl;
     }
 
     .modalBody {
-        @apply relative pt-5 pb-5 pl-2 pr-2 text-white text-xl
+        @apply relative pt-5 pb-5 pl-2 pr-2 text-white text-xl;
     }
 
     .btnClose {
-        @apply absolute top-0 right-0 border-none text-xl pt-4 pr-6 cursor-pointer font-bold text-white bg-transparent
+        @apply absolute top-0 right-0 border-none text-xl pt-4 pr-6 cursor-pointer font-bold text-white bg-transparent;
     }
 
     .tab {
-        @apply text-white p-5
+        @apply text-white p-5;
     }
 }

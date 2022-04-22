@@ -2,7 +2,7 @@
   <div>
     <h1 class="text-4xl m-5 mainText">List of Random People</h1>
     <div>
-      <div class="flex flex-row justify-end m-5">
+      <div class="flex flex-row justify-end m-10">
         <p class="m-1">Filter Gender by: </p>
         <select class="text-black cursor-pointer"
         v-model="genderSelect" @change="fetchUsers(0)" >
@@ -17,7 +17,7 @@
           <LoadingView/>
         </div>
         <div v-if="!isLoading && didFail" class="col-start-2 col-end-4">
-          <FailedToFetch/>
+          <FailedToFetch :error="errorMessage" />
         </div>
         <div v-else class="gridItem"
           v-for="(user, userIndex) in users" :key="userIndex"
@@ -61,8 +61,6 @@ export default defineComponent({
     PaginationButtons,
   },
   emits: ['page'],
-  props: {
-  },
   setup() {
     const {
       users,
@@ -72,6 +70,7 @@ export default defineComponent({
       isLoading,
       didFail,
       modalUserData,
+      errorMessage,
       fetchUsers,
       openModal,
       closeModal,
@@ -100,6 +99,7 @@ export default defineComponent({
       isLoading,
       didFail,
       modalUserData,
+      errorMessage,
       disabled,
       fetchUsers,
       openModal,

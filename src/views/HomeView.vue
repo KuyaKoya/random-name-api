@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue';
+import { defineComponent } from 'vue';
 import RandomUserList from '@/components/random-user-list.vue';
 
 export default defineComponent({

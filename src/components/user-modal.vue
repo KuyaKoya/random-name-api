@@ -3,7 +3,7 @@
     @click="close"
     @keydown="close">
     <div class="modal">
-      <header class="modalHeader">
+      <div class="modalHeader">
         <div class="flex flex-col">
           <div class="justify-center m-6">
             <img class="w-auto h-auto m-auto border-white border-4 rounded-full"
@@ -23,18 +23,18 @@
         >
           x
         </button>
-      </header>
+      </div>
 
-      <section class="modalBody">
+      <div class="modalBody">
         <div class="font-mono font-semibold">
           {{ currentTab }}
         </div>
         <div class="font-sans underline">
           {{ currentTabData }}
         </div>
-       </section>
+      </div>
 
-      <footer class="modalFooter">
+      <div class="modalFooter">
         <div class="tab pi pi-envelope"
          :class="[indexHovered == 1 ? tabActive : tab]"
          @mouseover="selectTab(1)"
@@ -60,7 +60,7 @@
          @mouseover="selectTab(5)"
          @focus="selectTab(5)">
         </div>
-      </footer>
+      </div>
     </div>
   </div>
 </template>

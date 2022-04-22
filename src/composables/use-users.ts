@@ -12,6 +12,7 @@ export default function useUsers() {
   const didFail = ref(false);
   const isOpen = ref(false);
   const modalUserData = ref();
+  const errorMessage = ref('');
 
   const url = 'https://randomuser.me/api/?';
   const resultLimit = 8;
@@ -44,7 +45,7 @@ export default function useUsers() {
       .catch((err) => {
         isLoading.value = false;
         didFail.value = true;
-        console.log(err);
+        errorMessage.value = `${err.name}: ${err.message}`;
       });
   }
 
@@ -78,6 +79,7 @@ export default function useUsers() {
     modalUserData,
     isLoading,
     didFail,
+    errorMessage,
     fetchUsers,
     openModal,
     closeModal,
