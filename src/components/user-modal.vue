@@ -2,7 +2,9 @@
     <div class="modalBackdrop"
     @click="close"
     @keydown="close">
-    <div class="modal">
+    <div class="modal"
+    @click.stop
+    @keydown.stop>
       <div class="modalHeader">
         <div class="flex flex-col">
           <div class="justify-center m-6">
