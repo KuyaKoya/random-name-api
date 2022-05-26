@@ -41,8 +41,8 @@
           <div
           class="hover:modalTabActive"
           :class="`tab ` + value"
-          @mouseover="selectTab(index+1)"
-          @focus="selectTab(index+1)"/>
+          @mouseover="selectTab(index)"
+          @focus="selectTab(index)"/>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@ import {
   computed,
 } from 'vue';
 import { User } from '@/interfaces/IUser';
-import userModal from '@/composables/user-modal';
+import userModal from '@/composables/use-modal';
 import { Tabs, TabClasses } from '@/enums/tab';
 
 export default defineComponent({
