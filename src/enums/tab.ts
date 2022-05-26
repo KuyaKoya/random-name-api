@@ -1,4 +1,4 @@
-enum Tabs {
+export enum Tabs {
     Email = 'Email',
     Birthday = 'Birthday',
     Address = 'Address',
@@ -6,4 +6,10 @@ enum Tabs {
     Login = 'Username',
 }
 
-export default Tabs;
+export enum TabClasses {
+    envelope = 'pi pi-envelope',
+    calendar = 'pi pi-calendar',
+    map = 'pi pi-map',
+    phone = 'pi pi-phone',
+    card = 'pi pi-id-card',
+}

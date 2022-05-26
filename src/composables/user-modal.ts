@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import Tabs from '@/enums/tab';
+import { Tabs } from '@/enums/tab';
 
 export default function userModal() {
   const currentTab = ref(Tabs.Email);
