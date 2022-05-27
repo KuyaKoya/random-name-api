@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import Tabs from '@/enums/tab';
+import { Tabs } from '@/enums/tab';
 
 export default function userModal() {
   const currentTab = ref(Tabs.Email);
@@ -33,23 +33,23 @@ export default function userModal() {
   function selectTab(index: number) {
     indexHovered.value = index;
     switch (index) {
-      case 1:
+      case 0:
         currentTab.value = Tabs.Email;
         currentTabData.value = modalData.value.email;
         break;
-      case 2:
+      case 1:
         currentTab.value = Tabs.Birthday;
         currentTabData.value = getBirthday();
         break;
-      case 3:
+      case 2:
         currentTab.value = Tabs.Address;
         currentTabData.value = getAddress();
         break;
-      case 4:
+      case 3:
         currentTab.value = Tabs.PhoneNumber;
         currentTabData.value = modalData.value.phone;
         break;
-      case 5:
+      case 4:
         currentTab.value = Tabs.Login;
         currentTabData.value = getLogin();
         break;

@@ -37,34 +37,16 @@
       </div>
 
       <div class="modalFooter">
-        <div class="tab pi pi-envelope"
-         :class="[indexHovered == 1 ? tabActive : tab]"
-         @mouseover="selectTab(1)"
-         @focus="selectTab(1)">
-        </div>
-        <div class="tab pi pi-calendar"
-         :class="[indexHovered == 2 ? tabActive : tab]"
-         @mouseover="selectTab(2)"
-         @focus="selectTab(2)">
-        </div>
-        <div class="tab pi pi-map"
-         :class="[indexHovered == 3 ? tabActive : tab]"
-         @mouseover="selectTab(3)"
-         @focus="selectTab(3)">
-        </div>
-        <div class="tab pi pi-phone"
-         :class="[indexHovered == 4 ? tabActive : tab]"
-         @mouseover="selectTab(4)"
-         @focus="selectTab(4)">
-        </div>
-        <div class="tab pi pi-id-card"
-         :class="[indexHovered == 5 ? tabActive : tab]"
-         @mouseover="selectTab(5)"
-         @focus="selectTab(5)">
+        <div  v-for="(value, key, index) in TabClasses" :key="index">
+          <div
+          class="hover:modalTabActive"
+          :class="`tab ` + value"
+          @mouseover="selectTab(index)"
+          @focus="selectTab(index)"/>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script lang="ts">
@@ -73,10 +55,11 @@ import {
   defineComponent,
   PropType,
   watchEffect,
+  computed,
 } from 'vue';
 import { User } from '@/interfaces/IUser';
-import userModal from '@/composables/user-modal';
-import Tabs from '@/enums/tab';
+import userModal from '@/composables/use-modal';
+import { Tabs, TabClasses } from '@/enums/tab';
 
 export default defineComponent({
   name: 'UserModal',
@@ -114,6 +97,7 @@ export default defineComponent({
       close,
       selectTab,
       Tabs,
+      TabClasses,
     };
   },
 });

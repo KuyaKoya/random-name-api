@@ -1,6 +1,6 @@
 <template>
   <button
-    :class="[disabled ? buttonDisabled : buttonActive]"
+    :class="[buttonStatus]"
     :disabled="disabled"
     v-if="pageNum > 1"
     @click="prevPage()"
@@ -8,7 +8,7 @@
     Prev
   </button>
   <button
-    :class="[disabled ? buttonDisabled : buttonActive]"
+    :class="[buttonStatus]"
     :disabled="disabled"
     @click="nextPage()"
   >
@@ -17,7 +17,12 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, watchEffect } from 'vue';
+import {
+  computed,
+  defineComponent,
+  ref,
+  watchEffect,
+} from 'vue';
 import useUsers from '@/composables/use-users';
 
 export default defineComponent({
@@ -35,6 +40,8 @@ export default defineComponent({
     const buttonDisabled = ref('paginationButtonsDisabled');
     const buttonActive = ref('paginationButtons');
 
+    const buttonStatus = computed(() => (
+      props.disabled ? buttonDisabled.value : buttonActive.value));
     watchEffect(() => {
       pageNum.value = props.page;
     });
@@ -53,6 +60,7 @@ export default defineComponent({
       pageNum,
       buttonDisabled,
       buttonActive,
+      buttonStatus,
       nextPage,
       prevPage,
     };
